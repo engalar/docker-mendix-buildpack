@@ -1,3 +1,4 @@
+docker build --build-arg BUILD_PATH=build --build-arg CF_BUILDPACK=v4.24.0 --build-arg ROOTFS_IMAGE=mendix/rootfs:ubi8 -t mendix/mendix-buildpack:v3.5.0 .
 # Docker Mendix Buildpack
 
 ![Test status](https://github.com/mendix/docker-mendix-buildpack/workflows/Test/badge.svg)
