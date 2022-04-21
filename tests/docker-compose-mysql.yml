@@ -2,7 +2,7 @@ version: "2.3"
 
 services:
     mendixapp:
-        image: mendix/mendix-buildpack:v3.5.0
+        image: mendixcn/issue-nginx-2
         healthcheck:
             test: ["CMD", "curl", "-f", "http://localhost:8080"]
             interval: 15s
@@ -18,8 +18,11 @@ services:
             MXRUNTIME_DatabasePassword: mendix
             MXRUNTIME_DatabaseHost: db:3306
             MXRUNTIME_DatabaseName: mendix
+            MXRUNTIME_EnableApacheCommonsLogging: true
             # DATABASE_URL: mysql://mendix:mendix@db:3306/mendix
             MXRUNTIME_ApplicationRootUrl: http://localhost/ppp/
+            # https://docs.mendix.com/refguide/logging/#mendix-nodes
+            LOGGING_CONFIG: '{"WebUI": "TRACE","Connector": "TRACE","Configuration": "TRACE", "RequestStatistics": "TRACE"}'
         ports:
             - 8080:8080
         links:

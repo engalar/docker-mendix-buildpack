@@ -93,3 +93,6 @@ ENV/
 
 # dev docker compose
 NOCOMMIT-docker-compose.yml
+
+project
+project2
